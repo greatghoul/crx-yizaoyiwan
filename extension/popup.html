@@ -5,19 +5,30 @@
   <title>一早一晚</title>
   <link rel="stylesheet" href="assets/stylesheets/popup.css" />
 </head>
-<body>
+<body id="messages">
   <div class="main">
-    <ul class="header">     
-      <li class="msg">最新通知</li>
-      <li class="new">最新主题</li>
-      <li class="logo"><a href="http://yizaoyiwan.com" target="_blank">一早一晚</a></li>
-    </ul>
+    <h5 class="header">最新通知</h5>
+    <ul class="messages">
+      <li v-repeat="messages" class="message">
+        <div class="message-avatar">
+          <img src="{{ActivityPhoto}}" />
+        </div>
 
-    <ul class="content">
-    </ul> 
+        <div class="message-content">
+          <a href="http://yizaoyiwan.com{{PhotoUrl}}" target="_blank">{{ActivityName}}</a> 回复了 <a href="{{Url}}" target="_blank">{{Data.Name}}</a>
+        </div>
+
+        <time class="message-time">{{DateUpdated | timeago}}</time>
+     </li>
+
+     <img src="assets/images/loading.gif" class="loading" />
+    </ul>
   </div>
   <script src="assets/javascripts/jquery.js"></script>
+  <script src="assets/javascripts/jquery.timeago.js"></script>
+  <script src="assets/javascripts/jquery.timeago.zh-CN.js"></script>
   <script src="assets/javascripts/vue.js"></script>
+  <script src="assets/javascripts/application.js"></script>
   <script src="assets/javascripts/popup.js"></script>
 </body>
 </html>

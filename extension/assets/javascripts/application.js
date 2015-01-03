@@ -27,3 +27,11 @@ function register_message_dispatcher(dispatcher) {
         }
     );    
 }
+
+
+function get_messages(response) {
+    var url = 'http://yizaoyiwan.com/profile/notificationspopin?DeliveryType=DATA';
+    $.getJSON(url, function(data) {
+        response(data['Activities']);
+    });
+}
