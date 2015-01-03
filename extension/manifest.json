@@ -1,0 +1,34 @@
+{
+  "name": "一早一晚",
+  "short_name": "yizaoyiwan",
+  "version": "0.1",
+  "manifest_version": 2,
+  "description": "一早一晚社区 Chrome 扩展",
+  "homepage_url": "https://github.com/greatghoul/crx-yizaoyiwan",
+
+  "icons": {
+      "16" : "assets/images/icon16.png",
+      "48" : "assets/images/icon48.png",
+      "128": "assets/images/icon128.png"
+  },
+
+  "background": {
+      "scripts": [
+        "assets/javascripts/jquery.js",
+        "assets/javascripts/event.js"
+      ],
+      "persistent": false
+  },
+
+  "browser_action": {
+    "default_icon": "assets/images/icon48.png",
+    "default_popup": "popup.html",
+    "default_title": "一早一晚"
+  },
+
+  "permissions": [
+    "tabs",
+    "alarms",
+    "http://yizaoyiwan.com/*"
+  ]
+}
